@@ -59,7 +59,7 @@ contract Trader is OracleRegistry {
         address aggregator = PriceFeeds[asset_];
         require(
             aggregator != address(0x0),
-            "VAULT: Asset not registered"
+            "Trader: Asset not registered"
         );
         int256 result = IPrice(aggregator).getThePrice();
         return uint(result);
